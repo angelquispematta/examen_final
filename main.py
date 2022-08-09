@@ -31,4 +31,12 @@ while respuesta == "s":
     print("Desea continuar Si (s) o No (n)")
     respuesta = input()
     contar += total
+    tupla = [str(codigo), " ", nom_produc_, " ", str(cantidad), " ", str(precio), " ", str(total)]
+    cadenavalores = "".join(tupla)
+    f = open("demofile.txt", "a")
+    f.write("\n" + cadenavalores)
+    f.close()
+f = open("demofile.txt")
+print(f.read())
+f.close()
 print("El precio a pagar es: ",contar)
